@@ -4,15 +4,11 @@
 // $wotgreal_dt: 11.09.2012 19:36:02$
 //
 // Captures mouse movement and translates them to cursor location for the Canvas.
+//
+// Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
 class GUICompatiblePlayerInput extends ROPlayerInput within GUICompatiblePlayerController
     config(Input);
-
-var() globalconfig bool bUseHardwareCursor;
-var bool bForcedSoftwareCursor; // If Gamepad is used, we can't use the hardware cursor.
-
-var() globalconfig float ControlStickSensitivityHor;
-var() globalconfig float ControlStickSensitivityVert;
 
 var IntPoint 		CurPos;
 
@@ -34,37 +30,6 @@ event PlayerInput(float DeltaTime)
     Super.PlayerInput(DeltaTime);
 }
 
-/* //Jumping while in the Paused menu caused the game to continue again
-exec function Jump()
-{
-    if( !IsPaused() )
-        super.Jump();
-} */
-
-exec function SetControlStickSensitivity(float NewHor, optional float NewVert, optional bool bInvertHor, optional bool bInvertVert)
-{
-    ControlStickSensitivityHor = 10*NewHor;
-    ControlStickSensitivityVert = NewVert != 0 ? 10*NewVert : 10*NewHor;
-
-    if (bInvertHor)
-        ControlStickSensitivityHor *= -1;
-    if (bInvertVert)
-        ControlStickSensitivityVert *= -1;
-
-    SaveConfig();
-}
-
-exec function ToggleHardwareCursor()
-{
-    SetHardwareCursorEnabled(!bUseHardwareCursor);
-}
-
-final function SetHardwareCursorEnabled(bool bEnabled)
-{
-    bUseHardwareCursor = bEnabled;
-    SaveConfig();
-}
-
 /**
  * Process an input key event routed through unrealscript from another object. This method is assigned as the value for the
  * OnRecievedNativeInputKey delegate so that native input events are routed to this unrealscript function.
@@ -79,8 +44,6 @@ final function SetHardwareCursorEnabled(bool bEnabled)
 function bool InputKey( int ControllerId, name Key, EInputEvent Event, float AmountDepressed = 1.f, bool bGamepad = FALSE )
 {
     local GUIMenuScene ActiveMenuScene;
-
-    bForcedSoftwareCursor = bGamepad;
 
     ActiveMenuScene = GetActiveMenuScene();
 

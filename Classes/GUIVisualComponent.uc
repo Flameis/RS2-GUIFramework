@@ -4,6 +4,8 @@
 // $wotgreal_dt: 26.10.2012 16:03:53$
 //
 // Base class for all components that draw Textures or Materials on the screen.
+//
+// Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
 class GUIVisualComponent extends GUIComponent;
 

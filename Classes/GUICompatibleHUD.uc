@@ -5,6 +5,8 @@
 //
 // Receives mouse movement and translates it to coordinates. Draws GUIComponents
 // to allow the creation of a menu.
+//
+// Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
 class GUICompatibleHUD extends ROHUD;
 

@@ -13,6 +13,8 @@
 // base HUD, priority of components inside this one can start from 0 again
 // as they are not directly known to the base HUD that holds the components.
 // They will be all drawn when the container is drawn.
+//
+// Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
 class GUIContainerComponent extends GUIComponent;
 

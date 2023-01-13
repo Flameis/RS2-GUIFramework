@@ -15,6 +15,8 @@
 //
 // Internally this is handled as stack by the MenuScene, so you can push and
 // pop screens any time the same way you can push and pop states in Actors.
+//
+// Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
 class GUIPage extends GUIContainerComponent;
 

@@ -5,6 +5,8 @@
 //
 // Holds references for all GUIComponents and wraps more of the GUI-related
 // functionality to separate it a bit from the HUD class.
+//
+// Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
 class GUIMenuScene extends Object
     editinlinenew
@@ -836,8 +838,8 @@ DefaultProperties
 
     MousePos = (X=500,Y=300)
     CursorColor=(R=255,G=255,B=255,A=255)
-    CursorTexture=Texture2D'EngineResources.Cursors.Arrow'
+    CursorTexture=Texture2D'VN_UI_Textures.OverheadMap.UI_OverheadMap_MouseCursor'
     SelectionCursorColor=(R=255,G=255,B=255,A=255)
-    SelectionCursorTexture=Texture2D'EngineResources.Cursors.Arrow'
+    SelectionCursorTexture=Texture2D'VN_UI_Textures.OverheadMap.UI_OverheadMap_MouseCursor'
     TooltipBackgroundColor=(R=255,G=255,B=255,A=255)
 }

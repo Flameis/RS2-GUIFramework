@@ -5,6 +5,8 @@
 //
 // A Label is the representation of plain text on the screen.
 // No textures involved, not clickable, not editable.
+//
+// Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
 class GUILabelComponent extends GUIComponent;
 

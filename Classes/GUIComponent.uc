@@ -8,6 +8,8 @@
 //
 // Hint: Don't confuse the Events in this class with engine events, most are
 // just functions that can be used as entry points and are thus named event.
+//
+// Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
 class GUIComponent extends Object
     abstract

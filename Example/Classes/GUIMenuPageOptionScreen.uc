@@ -1,4 +1,4 @@
-/* //-----------------------------------------------------------
+//-----------------------------------------------------------
 // 
 //-----------------------------------------------------------
 class GUIMenuPageOptionScreen extends GUIPage;
@@ -772,4 +772,4 @@ DefaultProperties
         DrawInfo(3) = ButtonInfoPressed
     End Object
     ChildComponents.Add(ApplyButton)
-} */
+}

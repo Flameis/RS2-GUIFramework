@@ -5,6 +5,8 @@
 //
 // Should be created within GUIBaseSliderComponent and be managed by it.
 // Represents a value on a scale between a minimum and maximum.
+//
+// Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
 class GUISliderButtonComponent extends GUIInteractiveComponent;;
 

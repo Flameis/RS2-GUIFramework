@@ -4,6 +4,8 @@
 // $wotgreal_dt: 07/10/2012 1:04:29 AM$
 //
 // Manages all parts of the Slider, including the button.
+//
+// Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
 class GUIBaseSliderComponent extends GUIInteractiveComponent;
 

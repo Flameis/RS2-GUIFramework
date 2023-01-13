@@ -5,6 +5,8 @@
 //
 // Adds special handling that takes the GUI components and mouse cursor into
 // account.
+//
+// Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
 class GUICompatiblePlayerController extends ROPlayerController;
 
@@ -191,5 +193,5 @@ auto state PlayerWaiting
 
 defaultproperties
 {
-  InputClass = class'GUICompatiblePlayerInput'
+    InputClass = class'GUICompatiblePlayerInput'
 }

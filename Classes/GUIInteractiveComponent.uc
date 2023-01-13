@@ -10,6 +10,8 @@
 // 1 = hover-selected
 // 2 = click-selected
 // 3 = pressed
+//
+// Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
 class GUIInteractiveComponent extends GUIVisualComponent;
 

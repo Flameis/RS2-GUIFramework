@@ -10,6 +10,8 @@
 // 1 = hover-selected
 // 2 = click-selected
 // 3 = pressed
+//
+// Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
 class GUIButtonComponent extends GUIInteractiveComponent;
 
@@ -220,7 +222,7 @@ DefaultProperties
 {
     bCanHaveSelection = true // This means hover selection
     bCanBePressed = True
-    bLocalizeCaption = True
+    bLocalizeCaption = false
     bDrawCaption = True
 
     Alignment = Align_Center

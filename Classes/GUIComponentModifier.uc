@@ -7,6 +7,8 @@
 // Currently the only change is the position of the component.
 // You specify the goal value and the transition time and this thing does the
 // rest.
+//
+// Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
 class GUIComponentModifier extends GUIComponent
     noteditinlinenew;

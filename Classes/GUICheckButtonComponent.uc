@@ -5,6 +5,8 @@
 //
 // A button that can display one of two states and is generally used to
 // represent boolean values.
+//
+// Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
 class GUICheckButtonComponent extends GUIInteractiveComponent;;
 

@@ -8,6 +8,8 @@
 // For instance can you place an interface for some door control as a console
 // on some machine mesh and use it there directly. This is a good replacement
 // for some of the 3D functionality that Scaleform provides.
+//
+// Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
 class GUIScriptedTextureHandler extends Actor
     // ClassGroup(GUI)

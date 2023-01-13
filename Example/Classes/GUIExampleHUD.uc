@@ -1,13 +1,12 @@
-/* //-----------------------------------------------------------
+//-----------------------------------------------------------
 //
 //-----------------------------------------------------------
 class GUIExampleHUD extends GUICompatibleHUD;
 
 var bool bPauseMenuIsOpen;
 
-
 // Open menu with Esc key.
-exec function CMShowMenu()
+exec function ShowMenu()
 {
     TogglePauseMenu();
 }
@@ -37,4 +36,4 @@ function TogglePauseMenu()
 DefaultProperties
 {
     MenuSceneClass=class'AdvancedExampleMenuScene' // Use our own MenuScene with the buttons.
-} */
+}
