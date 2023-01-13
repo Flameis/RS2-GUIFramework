@@ -54,7 +54,7 @@ function DrawCaption(Canvas C, optional byte DrawIndex)
                 else
                     DrawString = ItemList[i];
 
-                C.TextSize(DrawString, XL, YL, ItemCaptionInfo.ScaleX, ItemCaptionInfo.ScaleY);
+                C.TextSize(DrawString, XL, YL/* , ItemCaptionInfo.ScaleX, ItemCaptionInfo.ScaleY */);
                 BoundScale = ItemCaptionInfo.GetBoundScale(C, DrawString, GetComponentSize(C));
                 GetTextLocation(C, X, Y, XL * BoundScale.X, YL * BoundScale.Y);
                 Y = YEnd + i * (YL * BoundScale.Y);

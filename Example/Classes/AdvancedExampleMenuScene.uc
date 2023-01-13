@@ -1,4 +1,4 @@
-//-----------------------------------------------------------
+/* //-----------------------------------------------------------
 // NOTE: Replace 'SI_GUI.ButtonTest' in the DefaultProperties with references to
 // a valid texture in one of your packages. SubUVEnd should be changed to the
 // dimensions of the texture then.
@@ -648,4 +648,4 @@ DefaultProperties
         bEnabled=False
 	End Object
 	GUIComponents.Add(OptionsScreen)
-}
+} */

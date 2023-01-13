@@ -49,7 +49,7 @@ final function vector2D GetBoundScale(Canvas C, string DrawString, vector2D Boun
     }
     else
     {
-        C.TextSize(DrawString, Result.X, Result.Y, ScaleX, ScaleY);
+        C.TextSize(DrawString, Result.X, Result.Y/* , ScaleX, ScaleY */);
         if (Result.X != 0.f)
         {
             Result.X = FMin(BoundSize.X/Result.X, 1.f);

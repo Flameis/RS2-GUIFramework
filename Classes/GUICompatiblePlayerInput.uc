@@ -5,7 +5,7 @@
 //
 // Captures mouse movement and translates them to cursor location for the Canvas.
 //=============================================================================
-class GUICompatiblePlayerInput extends PlayerInput within GUICompatiblePlayerController
+class GUICompatiblePlayerInput extends ROPlayerInput within GUICompatiblePlayerController
     config(Input);
 
 var() globalconfig bool bUseHardwareCursor;
@@ -14,46 +14,32 @@ var bool bForcedSoftwareCursor; // If Gamepad is used, we can't use the hardware
 var() globalconfig float ControlStickSensitivityHor;
 var() globalconfig float ControlStickSensitivityVert;
 
+var IntPoint 		CurPos;
+
 event PlayerInput(float DeltaTime)
 {
     local GUIMenuScene ActiveMenuScene;
-    local GameViewportClient Viewport;
-    local vector2D CurPos;
+    // local GameViewportClient Viewport;
 
     ActiveMenuScene = GetActiveMenuScene();
-
 
     // Handle mouse
     // Ensure we have a valid HUD
     if (ActiveMenuScene != None && ActiveMenuScene.bCaptureMouseInput)
     {
-        if (bUseHardwareCursor && !bForcedSoftwareCursor)
-        {
-            Viewport = LocalPlayer(Player).ViewportClient;
-            CurPos = Viewport.GetMousePosition();
-
-            ActiveMenuScene.MousePos.X = CurPos.X;
-            ActiveMenuScene.MousePos.Y = CurPos.Y;
-        }
-        else
-        {
-
-            // Add the aMouseX to the mouse position and clamp it within the viewport width
-            ActiveMenuScene.MousePos.X = Clamp(ActiveMenuScene.MousePos.X + aMouseX + ((aStrafe + aTurn) * abs(ControlStickSensitivityHor)), 0, ActiveMenuScene.GetScreenSizeX());
-            // Add the aMouseY to the mouse position and clamp it within the viewport height
-            ActiveMenuScene.MousePos.Y = Clamp(ActiveMenuScene.MousePos.Y - aMouseY + ((-aBaseY + aLookUp) * abs(ControlStickSensitivityVert)), 0, ActiveMenuScene.GetScreenSizeY());
-        }
+        ActiveMenuScene.MousePos.X = CurPos.X;
+        ActiveMenuScene.MousePos.Y = CurPos.Y;
     }
 
     Super.PlayerInput(DeltaTime);
 }
 
-//Jumping while in the Paused menu caused the game to continue again
+/* //Jumping while in the Paused menu caused the game to continue again
 exec function Jump()
 {
     if( !IsPaused() )
         super.Jump();
-}
+} */
 
 exec function SetControlStickSensitivity(float NewHor, optional float NewVert, optional bool bInvertHor, optional bool bInvertVert)
 {
@@ -169,8 +155,42 @@ function bool InputChar( int ControllerId, string Unicode )
     return bConsume;
 }
 
+/**
+ * Process an input axis event routed through unrealscript from another object. This method is assigned as the value for the
+ * OnRecievedNativeInputAxis delegate so that native input events are routed to this unrealscript function.
+ *
+ * @param   ControllerId    the controller that generated this input axis event
+ * @param   Key             the name of the axis which an event occured for (MouseX, MouseY, etc.)
+ * @param   Delta           the amount of change in the axis
+ * @param   DeltaTime       the time since the last axis event
+ *
+ * @return  true to consume the axis event, false to pass it on.
+ */
+function bool InputAxis( int ControllerId, name Key, float Delta, float DeltaTime, optional bool bGamepad )
+{
+    if (GetActiveMenuScene().bCaptureMouseInput)
+    {
+	    // if they moved the Mouse on the X Axis
+	    if ( Key == 'MouseX' )
+	    {
+	    	if (CurPos.X+Delta < GetActiveMenuScene().GetScreenSizeX() && CurPos.X+Delta > 0)
+	    	    CurPos.X += Delta;
+	    	return true;
+	    }
+	    // If they moved the Mouse on the Y Axis
+	    else if ( Key == 'MouseY' )
+	    {
+	    	if (CurPos.Y-Delta < GetActiveMenuScene().GetScreenSizeY() && CurPos.Y-Delta > 0)
+	    	    CurPos.Y -= Delta;
+	    	return true;
+	    }
+    }
+	return false;
+}
+
 defaultproperties
 {
     OnReceivedNativeInputKey=InputKey
     OnReceivedNativeInputChar=InputChar
+    OnReceivedNativeInputAxis=InputAxis
 }

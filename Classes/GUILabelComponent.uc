@@ -45,7 +45,7 @@ event DrawComponent(Canvas C)
             else
                 DrawString = LabelText[StringIndex];
 
-            C.TextSize(DrawString, XL, YL, StringInfo[StringIndex].ScaleX, StringInfo[StringIndex].ScaleY);
+            C.TextSize(DrawString, XL, YL/* , StringInfo[StringIndex].ScaleX, StringInfo[StringIndex].ScaleY */);
             BoundScale = StringInfo[StringIndex].GetBoundScale(C, DrawString, GetComponentSize(C));
             GetTextLocation(C, X, Y, XL * BoundScale.X, YL * BoundScale.Y);
 

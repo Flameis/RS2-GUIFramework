@@ -1,4 +1,4 @@
-//-----------------------------------------------------------
+/* //-----------------------------------------------------------
 //
 //-----------------------------------------------------------
 class GUIExampleGameInfo extends GUICompatibleGameInfo;
@@ -6,4 +6,4 @@ class GUIExampleGameInfo extends GUICompatibleGameInfo;
 DefaultProperties
 {
     HUDType = class'GUIExampleHUD'
-}
+} */

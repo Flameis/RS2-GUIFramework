@@ -483,7 +483,7 @@ final function float GetMouseSpeedPerFrame()
 function float GetScaleX()
 {
     if (!bIsScriptedTextureMenuScene && OwnerHUD != None)
-        return OwnerHUD.ResolutionScaleX;
+        return OwnerHUD.SizeX / 1024.f;
 
     return 1;
 }
@@ -491,7 +491,7 @@ function float GetScaleX()
 function float GetScaleY()
 {
     if (!bIsScriptedTextureMenuScene && OwnerHUD != None)
-        return OwnerHUD.ResolutionScale;
+        return OwnerHUD.SizeY / 768.f;
 
     return 1;
 }

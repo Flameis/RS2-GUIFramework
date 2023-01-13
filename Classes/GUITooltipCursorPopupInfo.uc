@@ -21,7 +21,7 @@ function DrawTooltip(Canvas C, float PosX, float PosY, string DrawString)
 
 
     C.Font = Font;
-    C.TextSize(DrawString, XL, YL, ScaleX, ScaleY);
+    C.TextSize(DrawString, XL, YL/* , ScaleX, ScaleY */);
 
     //TODO: Move text box around when it's too close at the border.
     // Carriage return should only be used to limit the width of the box.

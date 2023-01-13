@@ -6,7 +6,7 @@
 // Receives mouse movement and translates it to coordinates. Draws GUIComponents
 // to allow the creation of a menu.
 //=============================================================================
-class GUICompatibleHUD extends UTHUDBase;
+class GUICompatibleHUD extends ROHUD;
 
 var(HUD) Font PlayerFont; // General purpose font used by the game.
 var(HUD) editinline GUIMenuScene MenuScene; // Handles buttons and similar.
@@ -15,9 +15,9 @@ var(HUD) editconst class<GUIMenuScene> MenuSceneClass; // The custom MenuScene c
 
 simulated event PostBeginPlay()
 {
-    RemoveMovies(); // Die, bitches!!!
+    // RemoveMovies(); // Die, bitches!!!
 
-    super(UDKHUD).PostBeginPlay();
+    super(ROHUD).PostBeginPlay();
 
     if (MenuScene == None)
     {
@@ -47,7 +47,7 @@ simulated event PostRender()
     if ( PlayerOwner != None )
     {
         // draw any debug text in real-time
-        PlayerOwner.DrawDebugTextList(Canvas,RenderDelta);
+        // PlayerOwner.DrawDebugTextList(Canvas,RenderDelta);
     }
 
     if ( bShowDebugInfo )
@@ -111,13 +111,13 @@ function CheckViewPortAspectRatio()
 
     if ( bIsWideScreen ) // Otherwise these are checked against 1024x768 by default.
     {
-        RatioX = (ViewX != 0 ? float(ViewX) : Canvas.ClipX) / 1280.f;
-        RatioY = (ViewY != 0 ? float(ViewY) : Canvas.ClipY) / 720.f;
+        RatioX = (ViewportSize.X != 0 ? ViewportSize.X : Canvas.ClipX) / 1280.f;
+        RatioY = (ViewportSize.Y != 0 ? ViewportSize.Y : Canvas.ClipY) / 720.f;
     }
     else
     {
-        RatioX = (ViewX != 0 ? float(ViewX) : Canvas.ClipX) / 1024.f;
-        RatioY = (ViewY != 0 ? float(ViewY) : Canvas.ClipY) / 768.f;
+        RatioX = (ViewportSize.X != 0 ? ViewportSize.X : Canvas.ClipX) / 1024.f;
+        RatioY = (ViewportSize.Y != 0 ? ViewportSize.Y : Canvas.ClipY) / 768.f;
     }
 }
 

@@ -10,7 +10,7 @@
 // for some of the 3D functionality that Scaleform provides.
 //=============================================================================
 class GUIScriptedTextureHandler extends Actor
-    ClassGroup(GUI)
+    // ClassGroup(GUI)
     placeable;
 
 var() int MaterialMeshIndex; // Index of the Material slot on the StaticMesh that we want to assign to.
@@ -109,7 +109,7 @@ defaultproperties
    ClearColor=(R=0.0,G=0.0,B=0.0,A=0.0)
 
    Begin Object class=StaticMeshComponent Name=StaticMeshComp1
-      StaticMesh=StaticMesh'dwStaticMeshes.Plane'
+    //   StaticMesh=StaticMesh'dwStaticMeshes.Plane'
    End Object
 
    Mesh = StaticMeshComp1

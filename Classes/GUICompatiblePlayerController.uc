@@ -6,7 +6,7 @@
 // Adds special handling that takes the GUI components and mouse cursor into
 // account.
 //=============================================================================
-class GUICompatiblePlayerController extends GamePlayerController;
+class GUICompatiblePlayerController extends ROPlayerController;
 
 
 // Mouse event enum
