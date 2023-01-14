@@ -29,8 +29,6 @@ var() bool bConstrainDrawAreaToContainer;
 
 
 
-
-
 event InitializeComponent()
 {
     local GUIComponent Comp;
@@ -258,5 +256,5 @@ function PrecacheComponentTextures(Canvas C)
 
 DefaultProperties
 {
-
+    bConstrainDrawAreaToContainer=True
 }

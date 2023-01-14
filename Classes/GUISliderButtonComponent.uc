@@ -8,7 +8,7 @@
 //
 // Modified by Luke Scovel (AKA Flameis) for use in Rising Storm 2: Vietnam
 //=============================================================================
-class GUISliderButtonComponent extends GUIInteractiveComponent;;
+class GUISliderButtonComponent extends GUIInteractiveComponent;
 
 var() GUIBaseSliderComponent SliderBase;
 
